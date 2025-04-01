@@ -11,8 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Dallas International Hoopers",
-  description: "Join our basketball community in Dallas. Games every Friday at Russell Creek Park.",
-    generator: 'v0.dev'
+  description: "Join our basketball community in Dallas. Games every Friday at Russell Creek Park."
 }
 
 export default function RootLayout({

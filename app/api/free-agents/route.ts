@@ -23,7 +23,7 @@ export async function GET() {
       .map((row) => {
         const cols = row.split(",").map((col) => col.trim());
 
-        if (cols.length >= 3) {
+        if (cols.length >= 3 && cols[1]) {
           return {
             name: cols[1] || "Unnamed", // Name
             instagram: cols[2] || "", // Instagram handle
