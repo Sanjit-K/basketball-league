@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import FreeAgentsSection from "@/components/free-agents-section"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import TeamTable from "@/components/TeamTable"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -61,23 +62,25 @@ export default function Home() {
                 Join Our Basketball Community
               </motion.h2>
               <motion.p className="text-lg text-gray-300 mb-8" variants={itemVariants}>
-                A friendly community for basketball enthusiasts of all skill levels in the Dallas area.
+                Signups for this season are now closed — but stay tuned! Another season is coming soon.
+                Follow us on Instagram for all updates and announcements.
               </motion.p>
               <motion.div variants={itemVariants}>
-                <Button asChild size="lg" className="font-medium relative overflow-hidden group">
+                <Button asChild size="lg" variant="outline" className="font-medium relative overflow-hidden group">
                   <Link
-                    href="https://docs.google.com/forms/d/e/1FAIpQLScN6QIGpeUnrCZHWdmLgWpNFNaBLow1op1CMYIRc0aQj0Zwow/viewform?usp=dialog"
+                    href="https://www.instagram.com/dallas.international.hoopers/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="relative z-10">Sign Up Now</span>
-                    <span className="absolute inset-0 bg-primary/50 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></span>
+                    <span className="relative z-10">Follow on Instagram</span>
+                    <span className="absolute inset-0 bg-primary/20 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></span>
                   </Link>
                 </Button>
               </motion.div>
             </motion.div>
           </div>
         </section>
+
 
         {/* Features Section */}
         <section className="py-12 md:py-16">
@@ -163,9 +166,10 @@ export default function Home() {
               </motion.div>
             </motion.div>
           </div>
-        </section>
-
+        </section>  
+        <TeamTable />             
         <FreeAgentsSection />
+
       </main>
 
       <footer className="border-t border-gray-800/30 py-6 backdrop-blur-sm z-10">

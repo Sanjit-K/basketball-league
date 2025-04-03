@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import MatchSchedule from '@/components/MatchSchedule';
 
 export default function TeamPage() {
   const params = useParams(); // Correct way to access dynamic params
@@ -53,34 +54,59 @@ export default function TeamPage() {
   }  
   return (
     
-    <div className="flex justify-center items-center min-h-screen bg-background p-6">
-      <div className="glass shadow-lg rounded-2xl p-8 max-w-md w-full border border-border">
-        <h1 className="text-2xl font-bold text-center text-white mb-4">
-          {teamData.name} Stats
-        </h1>
-        <div className="space-y-3 text-white">
-          <p className="flex justify-between text-lg">
-            <span className="font-semibold">Average Points Scored:</span>
-            <span>{teamData.avg_points_scored}</span>
-          </p>
-          <p className="flex justify-between text-lg">
-            <span className="font-semibold">Average Points Against:</span>
-            <span>{teamData.avg_points_against}</span>
-          </p>
-          <p className="flex justify-between text-lg">
-            <span className="font-semibold">Wins:</span>
-            <span>{teamData.wins}</span>
-          </p>
-          <p className="flex justify-between text-lg">
-            <span className="font-semibold">Losses:</span>
-            <span>{teamData.losses}</span>
-          </p>
-          <p className="flex justify-between text-lg">
-            <span className="font-semibold">Win Percentage:</span>
-            <span>{Math.floor(teamData.win_percent * 100) / 100}%</span>
-          </p>
-        </div>
+    <div className="relative min-h-screen bg-gradient-to-r from-navy-800 to-black p-6 flex justify-center items-start">
+  <div className="absolute inset-0 bg-white opacity-20 blur-xl"></div>
+  <div className="relative glass shadow-2xl rounded-b-3xl p-6 sm:p-8 md:p-10 w-full max-w-screen-xl backdrop-blur-sm bg-white/10 border border-white/20">
+    {/* Header with team logo and name */}
+    <div className="flex items-center mb-6 flex-col sm:flex-row">
+      
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-white text-center sm:text-left">
+        {teamData.name.toUpperCase().replace(/-/g, " ")}
+      </h1>
+    </div>
+
+    {/* Stats display */}
+    <div className="space-y-4 text-white">
+      <div className="overflow-x-auto">
+        <table className="min-w-full text-lg sm:text-xl">
+          <tbody>
+            <tr className="animate-fadeIn">
+              <td className="font-semibold">Average Points Scored:</td>
+              <td>{teamData.avg_points_scored}</td>
+            </tr>
+            <tr className="animate-fadeIn delay-100">
+              <td className="font-semibold">Average Points Against:</td>
+              <td>{teamData.avg_points_against}</td>
+            </tr>
+            <tr className="animate-fadeIn delay-200">
+              <td className="font-semibold">Wins:</td>
+              <td>{teamData.wins}</td>
+            </tr>
+            <tr className="animate-fadeIn delay-300">
+              <td className="font-semibold">Losses:</td>
+              <td>{teamData.losses}</td>
+            </tr>
+            <tr className="animate-fadeIn delay-400">
+              <td className="font-semibold">Win Percentage:</td>
+              <td>{Math.floor(teamData.win_percent * 100) / 100}%</td>
+            </tr>
+            <tr className="animate-fadeIn delay-500">
+              <td className="font-semibold">Members:</td>
+              <td>
+                {teamData.members.map((member: string | number | ReactNode, index: Key) => (
+                  <p key={index}>{member}</p>
+                ))}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
+    <MatchSchedule teamName={teamData.name} />
+  </div>
+</div>
+
+
+
   );
 }
