@@ -8,6 +8,7 @@ import FreeAgentsSection from "@/components/free-agents-section"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import TeamTable from "@/components/TeamTable"
+import MatchCalendar from "@/components/MatchCalendar"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -86,14 +87,14 @@ export default function Home() {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
               {/* Game Schedule Card */}
-              <motion.div variants={itemVariants}>
+              {/* <motion.div variants={itemVariants}>
                 <Card className="bg-gray-800/50 backdrop-blur-md border-gray-700/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
                   <CardHeader>
                     <Calendar className="h-8 w-8 mb-2 text-primary" />
@@ -104,10 +105,11 @@ export default function Home() {
                     {/* <div className="space-y-2">
                       <p className="font-medium">Every Friday</p>
                       <p>5:00 PM - 7:00 PM</p>
-                    </div> */}
+                    </div> 
                   </CardContent>
                 </Card>
-              </motion.div>
+              </motion.div> 
+            */}
 
               {/* Location Card */}
               <motion.div variants={itemVariants}>
@@ -115,7 +117,6 @@ export default function Home() {
                   <CardHeader>
                     <MapPin className="h-8 w-8 mb-2 text-primary" />
                     <CardTitle>Game Location</CardTitle>
-                    <CardDescription>Easy to find and access</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
@@ -167,7 +168,8 @@ export default function Home() {
             </motion.div>
           </div>
         </section>  
-        <TeamTable />             
+        <MatchCalendar />    
+        <TeamTable />        
         <FreeAgentsSection />
 
       </main>
