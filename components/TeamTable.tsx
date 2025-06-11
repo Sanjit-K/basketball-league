@@ -39,6 +39,8 @@ export default function TeamTable() {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   useEffect(() => {
+    setSortOrder('desc');
+    setSortKey('wins');
     const fetchAllTeams = async () => {
       try {
         const fetchedTeams = await Promise.all(

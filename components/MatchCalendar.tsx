@@ -79,7 +79,7 @@ export default function MatchCalendar() {
                     ? "Upcoming"
                     : match.Winner === "Draw"
                     ? "Draw"
-                    : `${match.Winner} Won`;
+                    : `${match.Winner.toUpperCase().replace(/-/g, " ")} Won`;
 
                 return (
                   <li

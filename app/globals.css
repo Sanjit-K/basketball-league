@@ -58,6 +58,23 @@ body{
   body {
     @apply bg-background text-foreground;
   }
+  .theme {
+    --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  }
+  :root {
+    --color-1: oklch(66.2% 0.225 25.9);
+    --color-2: oklch(60.4% 0.26 302);
+    --color-3: oklch(69.6% 0.165 251);
+    --color-4: oklch(80.2% 0.134 225);
+    --color-5: oklch(90.7% 0.231 133);
+  }
+  .dark {
+    --color-1: oklch(66.2% 0.225 25.9);
+    --color-2: oklch(60.4% 0.26 302);
+    --color-3: oklch(69.6% 0.165 251);
+    --color-4: oklch(80.2% 0.134 225);
+    --color-5: oklch(90.7% 0.231 133);
+  }
 }
 
 /* Custom scrollbar */
@@ -104,3 +121,28 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+@layer utilities {
+  @keyframes text-shimmer {
+    0% {
+      background-position: -75% 0;
+    }
+    100% {
+      background-position: 125% 0;
+    }
+  }
+
+  .animate-text-shimmer {
+    animation: text-shimmer 4s ease-in-out infinite;
+  }
+}
+
+@theme inline {
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
+    }
+  }
+}
