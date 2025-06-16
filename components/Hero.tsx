@@ -108,6 +108,13 @@ export default function Hero() {
             Prize Pool: ${prizePool.toLocaleString()}
             <span className="absolute -inset-1 blur-md bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-30 rounded-lg"></span>
           </motion.div>
+          <motion.p
+            variants={itemVariants}
+            className="text-md text-white font-medium mb-6"
+          >
+            Tournament Date: <span className="text-orange-400">TBA</span>
+          </motion.p>
+
 
           <motion.p
             variants={itemVariants}
