@@ -60,8 +60,7 @@ function PaymentContent() {
         </p>
 
         <p>
-          Teams will be verified within 1-2 days after payment is confirmed. You can
-          still log your match wins before verification.
+          Teams will be verified within 1-2 days after payment is confirmed.
         </p>
 
         <p className="italic text-gray-400 text-sm">

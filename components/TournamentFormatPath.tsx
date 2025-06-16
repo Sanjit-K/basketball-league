@@ -2,29 +2,29 @@ import { motion } from "framer-motion";
 
 const steps = [
   {
-    icon: "👥",
-    title: "Make a Team",
-    description: "Play a game. Ask your opponent to create a DIH team if they don’t have one.",
+    icon: "📋",
+    title: "Sign Up",
+    description: "Create your team and register before the tournament starts.",
   },
   {
-    icon: "📝",
-    title: "Log Your Game",
-    description: "Record the match details to keep your wins official.",
+    icon: "📅",
+    title: "Get Match Schedule",
+    description: "Teams are randomly seeded and bracket is released.",
   },
   {
-    icon: "📈",
-    title: "Climb the Leaderboard",
-    description: "Collect wins over the 6-week season to reach the top.",
+    icon: "⚔️",
+    title: "Compete in Bracket",
+    description: "Win and move up. Lose once and drop down to the lower bracket.",
+  },
+  {
+    icon: "🔁",
+    title: "Fight Through Elimination",
+    description: "Teams get one second chance in the lower bracket. Lose twice and you're out.",
   },
   {
     icon: "🏆",
-    title: "Final Tournament",
-    description: "Top 6 teams battle it out to crown the champion.",
-  },
-  {
-    icon: "💰",
-    title: "Win Prizes",
-    description: "Winners take home a cash prize.",
+    title: "Championship Match",
+    description: "The winner of the upper and lower brackets face off in the finals.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function TournamentFormatPath() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          How It Works
+          Tournament Format
         </motion.h3>
 
         <div className="flex flex-col gap-8">

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
+import { Button } from "./ui/button";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -112,7 +113,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-sm text-gray-400 mb-10"
           >
-            We keep 0 profit. All registration fees go straight to the prize pool.
+            We keep 0 profit. All registration fees go straight to the prize pool. Pool will start to increase after 6 teams are registered and verified.
           </motion.p>
 
           <div className="flex justify-center gap-6 flex-wrap">
@@ -124,15 +125,16 @@ export default function Hero() {
               </Link>
             </motion.div>
             <motion.div variants={itemVariants}>
-              <Link
-                href="https://docs.google.com/document/d/1Ot_BRXNlBdzt1cXuxN5y1Q-ccznt8ucP5jhYrv2ILIw/edit?tab=t.0"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  const section = document.getElementById("tournament-rules");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
-                <RainbowButton className=" text-white hover:bg-gray-900" variant="outline">
-                  Regulations and Details
-                </RainbowButton>
-              </Link>
+                <Button className="text-white hover:bg-gray-900" variant="outline">
+                  Tournament Rules
+                </Button>
+              </button>
             </motion.div>
             <motion.div variants={itemVariants}>
               <Link
@@ -140,9 +142,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <RainbowButton className=" text-white hover:bg-gray-900" variant="outline">
-                  Log a Win
-                </RainbowButton>
+               
               </Link>
             </motion.div>
           </div>

@@ -10,6 +10,7 @@ import Hero from "@/components/Hero"
 import Leaderboard from "@/components/Leaderboard"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
+import TournamentRules from "@/components/TournamentRules"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -45,7 +46,9 @@ export default function Home() {
       <Navbar />
       <main className="flex-1 z-10 pt-16">
         <Hero />
-        <TournamentFormatCarousel />
+        <section id="tournament-rules">
+          <TournamentRules />
+        </section>
       </main>
       <Footer />
     </div>

@@ -14,7 +14,7 @@ export default function Navbar() {
 
   const tabs = [
     { name: "Home", href: "/" },
-    { name: "Leaderboard", href: "/leaderboard" },
+    { name: "Matches", href: "/matches" },
     { name: "Create a Team", href: "/create" },
   ];
 
