@@ -52,7 +52,7 @@ const rules = [
     title: "Scoring & Bracket Updates",
     points: [
       "Scorekeepers will report results immediately after each match.",
-      "Brackets update live on the official website: [Insert site or QR code].",
+      "Brackets update live on the official website.",
       "Wins and losses determine next placement per the bracket path.",
     ],
   },
