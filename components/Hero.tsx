@@ -112,7 +112,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-md text-white font-medium mb-6"
           >
-            Tournament Date: <span className="text-orange-400">TBA</span>
+            Tournament Date: <span className="text-orange-400">July 12, 2025</span>
           </motion.p>
 
 
